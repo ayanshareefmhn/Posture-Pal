@@ -37,3 +37,64 @@ Integration: Child process / Flask API / Socket bridge (depending on your implem
 📈 Use-Case
 
 Perfect for students, remote employees, gamers, and anyone working long hours on a computer. Helps improve ergonomics and reduce back/neck strain.
+
+file structure =
+backend/
+│── index.js
+│
+├── controllers/
+│     └── alerts.controller.js
+│
+├── middleware/
+│     └── auth.js
+│
+├── models/
+│     └── Alert.js
+│
+├── routes/
+│     ├── alerts.routes.js
+│     └── postureRoutes.js
+│
+└── package.json  (if present)
+
+frontend/
+│── index.html
+│── package.json
+│── vite.config.js
+│
+└── src/
+     │── App.jsx
+     │── App.css
+     │── index.css
+     │── main.jsx
+     │
+     └── component/
+           ├── Home.jsx
+           ├── Navbar.jsx
+           ├── Navbar.css
+           ├── PostureTracker.jsx
+           └── PostureTracker.css
+
+posturepal_model/
+│── .python-version
+│── requirements.txt
+│── collect_data.py
+│── infer_runtime.py
+│── main.py
+│── posture_features.py
+│── train_model.py
+│
+├── .venv/               (virtual environment - should NOT be committed)
+│
+├── __pycache__/         (auto-generated - ignore)
+│
+├── data/
+│     ├── raw/           (raw webcam captures / keypoints)
+│     ├── processed/     (cleaned & feature-extracted data)
+│     └── labels/        (label files if any)
+│
+└── models/
+      ├── saved_model.pkl
+      ├── posture_classifier.joblib
+      └── (any trained weights)
+
